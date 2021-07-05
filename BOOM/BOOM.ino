@@ -1,7 +1,26 @@
 /*기본 설정*/
 
 //조만간 헤더파일이나 만듭시다!
-#include "src\segment.h"
+#include "src\functions.h"
+
+
+        //   a     b     c     d     e     f     g
+#define _0 {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW}
+#define _1 {LOW,  HIGH, HIGH, LOW,  LOW,  LOW,  LOW}
+#define _2 {HIGH, HIGH, LOW,  HIGH, HIGH, LOW, HIGH}
+#define _3 {HIGH, HIGH, HIGH, HIGH, LOW,  LOW, HIGH}
+#define _4 {LOW,  HIGH, HIGH, LOW,  LOW, HIGH, HIGH}
+#define _5 {HIGH, LOW,  HIGH, HIGH, LOW, HIGH, HIGH}
+#define _6 {HIGH, LOW,  HIGH, HIGH, HIGH, HIGH, HIGH}
+#define _7 {HIGH, HIGH, HIGH, LOW,  LOW,  LOW,  LOW}
+#define _8 {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, HIGH}
+#define _9 {HIGH, HIGH, HIGH, HIGH, LOW,  HIGH, HIGH}
+int num_bit[10][7] = { _0, _1, _2, _3, _4, _5, _6, _7, _8, _9 };
+int n1 = 1, n2 = 5, n3, n4 = 0; //다이트 숫자 값 임시 저장소
+int count = 0;    //시간 측�
+int times = time_lit; 
+int c1, c2, c3, c4, c5, c6, c7, c8 = 0;
+int r = 0;
 
 //폭탄 선 제거 설정
 void setup() {
